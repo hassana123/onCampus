@@ -87,6 +87,7 @@ export const eventData = [
       "Hosted by: National Association of Science Student, Bayero University, Kano",
     eventMonth: "January",
     eventDate: "01",
+    eventStatus: "Paid",
     eventLocation: "Baba Ahmed University",
   },
 ];

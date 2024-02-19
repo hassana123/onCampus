@@ -4,8 +4,14 @@ import bluearrow from "../assets/arrowblue.svg";
 import arrow from "../assets/angle.svg";
 
 const Events = ({ pageTitle }) => {
-  const eventData = useSelector((state) => state.event.eventData);
+  const eventData = useSelector((state) => state.filter.eventData);
+  const searchResults = useSelector((state) => state.filter.searchResults);
+  const searchTerm = useSelector((state) => state.filter.searchTerm);
+  const selectedLocation = useSelector(
+    (state) => state.filter.selectedLocation
+  );
 
+  console.log(searchResults);
   return (
     <section className="w-[80%] mx-auto">
       <div className="flex my-10">
@@ -20,7 +26,10 @@ const Events = ({ pageTitle }) => {
         </div>
       </div>
       <div className="grid grid-cols-3 my-10 gap-5  rounded-md">
-        {eventData.map((event, index) => (
+        {(searchResults.length > 0 || searchTerm !== ""
+          ? searchResults
+          : eventData
+        ).map((event, index) => (
           <div className="bg-white relative rounded-md" key={index}>
             <img
               className="w-[100%]"

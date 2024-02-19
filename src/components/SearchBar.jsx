@@ -10,13 +10,13 @@ import search from "../assets/search.svg";
 import arrow from "../assets/arrow.svg";
 const SearchBar = () => {
   const [showLocations, setShowLocations] = useState(false);
-  const eventData = useSelector((state) => state.event.eventData);
+  const eventData = useSelector((state) => state.filter.eventData);
 
   const dispatch = useDispatch();
   const { searchTerm, selectedLocation } = useSelector((state) => state.filter);
-
-  const handleSearchTermChange = (e) => {
-    dispatch(setSearchTerm(e.target.value));
+  console.log(selectedLocation, searchTerm);
+  const handleSearchTermChange = (val) => {
+    dispatch(setSearchTerm(val));
   };
   const handleLocationChange = (location) => {
     dispatch(setSelectedLocation(location));
@@ -42,18 +42,22 @@ const SearchBar = () => {
             type="text"
             placeholder="Web Development Class"
             value={searchTerm}
-            onChange={handleSearchTermChange}
+            onChange={(e) => {
+              handleSearchTermChange(e.target.value);
+              handleSearch();
+            }}
           />
         </div>
         <div>
           <p>in</p>
           <div className="relative">
             <input
-              className=" text-white py-1 bg-transparent border-b border-gray-400"
+              className="text-white py-1 bg-transparent border-b border-gray-400"
               type="text"
-              placeholder={selectedLocation}
+              placeholder="Select Location"
               value={selectedLocation}
-              onChange={handleLocationChange}
+              readOnly={true}
+              onClick={() => setShowLocations(!showLocations)}
             />
             <img
               className="w-[15%] cursor-pointer  absolute top-0  right-[-6%]"
@@ -62,23 +66,26 @@ const SearchBar = () => {
               alt=""
             />
             {showLocations && (
-              <div className="text-black z-[6] absolute bg-white py-1 border border-gray-400 rounded-[5px] mt-2">
+              <select
+                className="text-black z-[6] absolute bg-white py-2 border border-gray-400 top-0 left-0 rounded-[5px]  w-full"
+                onChange={(e) => handleLocationChange(e.target.value)}
+                value={selectedLocation}
+              >
                 {eventData.map((location, index) => (
-                  <input
-                    key={index}
-                    type="text"
-                    className="cursor-pointer text-black  bg-white py-2 px-4 hover:bg-gray-200 w-full border-none outline-none focus:outline-none"
-                    value={location.eventLocation}
-                    onClick={() => handleLocationChange(location.eventLocation)}
-                  />
+                  <option key={index} value={location.eventLocation}>
+                    {location.eventLocation}
+                  </option>
                 ))}
-              </div>
+              </select>
             )}
           </div>
         </div>
       </div>
 
-      <button className="bg-white py-2 px-5 rounded-[10px]">
+      <button
+        onClick={handleSearch}
+        className="bg-white py-2 px-5 rounded-[10px]"
+      >
         <img className=" mx-auto" src={search} alt="" />
       </button>
     </section>

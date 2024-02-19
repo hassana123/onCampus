@@ -1,14 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { eventData } from "./EventsData";
 
 const initialState = {
   searchTerm: "",
   selectedLocation: "",
+  eventData: eventData,
+  searchResults: [],
 };
 
 const filterSlice = createSlice({
   name: "filter",
   initialState,
   reducers: {
+    updateEventData: (state, action) => {
+      state.searchResults = action.payload;
+    },
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
     },
@@ -16,21 +22,19 @@ const filterSlice = createSlice({
       state.selectedLocation = action.payload;
     },
     performSearch: (state) => {
-      const { searchTerm, selectedLocation, events } = state;
+      const { searchTerm, selectedLocation } = state;
 
-      // Perform search logic
-      const filteredEvents = events.filter((event) => {
-        const searchTermMatch = event.eventHeader
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+      const filteredEvents = eventData.filter((event) => {
+        const searchTermMatch =
+          event.eventHeader.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          event.eventDesc.toLowerCase().includes(searchTerm.toLowerCase());
         const locationMatch = selectedLocation
-          ? event.location.toLowerCase() === selectedLocation.toLowerCase()
+          ? event.eventLocation.toLowerCase() === selectedLocation.toLowerCase()
           : true;
 
         return searchTermMatch && locationMatch;
       });
 
-      // Update searchResults in the state
       state.searchResults = filteredEvents;
     },
   },
