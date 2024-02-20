@@ -8,9 +8,14 @@ import {
   setConfirmPassword,
   resetForm,
 } from "../data/authSlice";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const SignUp = () => {
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const { displayName, username, email, password, confirmPassword } =
     useSelector((state) => state.auth);
@@ -38,7 +43,31 @@ const SignUp = () => {
 
   const handleSignUpFormSubmit = (e) => {
     e.preventDefault();
-    // Handle sign-up logic here
+
+    // Basic validation checks
+    if (!displayName || !username || !email || !password || !confirmPassword) {
+      setError("All fields are required");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    } else {
+      setLoading(true);
+    }
+
+    const userDetails = {
+      displayName,
+      username,
+      email,
+      password,
+    };
+
+    localStorage.setItem("userDetails", JSON.stringify(userDetails));
+    dispatch(resetForm());
+    setError(null);
+    navigate("/user-dashboard");
     dispatch(resetForm());
   };
   return (
@@ -134,9 +163,14 @@ const SignUp = () => {
               className="text-[var(--color-purple)] bg-[#D8E3F4]  py-2  px-10 rounded font-bold"
               type="submit"
             >
-              Sign-up
+              {loading ? "Processing" : "Sign Up"}
             </button>
           </div>
+          {error && (
+            <div className="text-red-500 text-center">
+              <p>{error}</p>
+            </div>
+          )}
         </form>
       </div>
     </section>

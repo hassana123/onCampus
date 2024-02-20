@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setUsername,
@@ -9,7 +9,10 @@ import {
 } from "../data/authSlice";
 
 const Login = () => {
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { username, password, rememberMe } = useSelector((state) => state.auth);
   console.log(username, password, rememberMe);
   const handleUsernameChange = (e) => {
@@ -23,11 +26,33 @@ const Login = () => {
   const handleRememberMeChange = () => {
     dispatch(setRememberMe(!rememberMe));
   };
-
+  //console.log(JSON.parse(localStorage.getItem("userDetails")));
   const handleLoginFormSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
+
+    // Get user details from local storage
+    const storedUserDetails = JSON.parse(localStorage.getItem("userDetails"));
+
+    // Basic validation checks
+    if (!username || !password) {
+      setError("Both username and password are required");
+      return;
+    }
+
+    // Check if entered username and password match stored details
+    setLoading(true);
+    if (
+      storedUserDetails &&
+      username === storedUserDetails.username &&
+      password === storedUserDetails.password
+    ) {
+      // Navigate to user dashboard (you can replace this with your actual route)
+      navigate("/user-dashboard");
+    } else {
+      setError("Invalid credentials");
+    }
   };
+
   return (
     <section className="text-[16px] bg-custom-image flex items-center justify-center  bg-cover w-[100%] h-screen">
       <div className="w-[50%] mx-auto max-[500px] ">
@@ -77,6 +102,7 @@ const Login = () => {
           />
           <div className="flex justify-center my-5 gap-2">
             <input
+              required
               checked={rememberMe}
               onChange={handleRememberMeChange}
               className=""
@@ -91,9 +117,14 @@ const Login = () => {
               type="submit"
               className="text-[var(--color-purple)] bg-[#D8E3F4]  py-2  w-full rounded font-bold"
             >
-              Log In{" "}
+              {loading ? "processing" : " Log In"}
             </button>
           </div>
+          {error && (
+            <div className="text-red-500 text-center">
+              <p>{error}</p>
+            </div>
+          )}
         </form>
       </div>
     </section>

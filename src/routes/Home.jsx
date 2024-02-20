@@ -2,15 +2,15 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Events from "../components/Events";
-import Footer from "../components/Footer";
+
+import Layout from "../components/Layout";
 const Home = () => {
   return (
-    <main className="h-screen">
+    <Layout>
       <Navbar />
       <Hero />
       <Events pageTitle={"Up Comming Events"} />
-      <Footer />
-    </main>
+    </Layout>
   );
 };
 
