@@ -1,36 +1,59 @@
 import flyer from "../assets/flyer.png";
 export const eventData = [
   {
+    eventId: 1,
     eventFlyer: flyer,
     eventHeader: "1st Annual Scientist Conference",
     eventDesc:
       "Hosted by: National Association of Science Student, Bayero University, Kano",
     eventMonth: "January",
     eventDate: "01",
+    eventTime: "10:00am - 12:00pm",
     eventStatus: "Free",
     eventLocation: "Bayero University Kano",
+    eventTags: ["tech", "Artificail Intelligence", "Networking", "AI"],
   },
   {
+    eventId: 2,
     eventFlyer: flyer,
     eventHeader: "1st Annual Scientist Conference",
     eventDesc:
       "Hosted by: National Association of Science Student, Bayero University, Kano",
     eventMonth: "February",
     eventDate: "15",
+    eventTime: "10:00am - 12:00pm",
     eventStatus: "Free",
     eventLocation: "Bayero University Kano",
+    eventTags: ["tech", "Artificail Intelligence", "Networking", "AI"],
   },
   {
+    eventId: 3,
     eventFlyer: flyer,
     eventHeader: "1st Annual Scientist Conference",
     eventDesc:
       "Hosted by: National Association of Science Student, Bayero University, Kano",
     eventMonth: "March",
     eventDate: "28",
+    eventTime: "10:00am - 12:00pm",
     eventStatus: "Free",
     eventLocation: "KUST",
+    eventTags: ["tech", "Artificail Intelligence", "Networking", "AI"],
   },
   {
+    eventId: 4,
+    eventFlyer: flyer,
+    eventHeader: "1st Annual Scientist Conference",
+    eventDesc:
+      "Hosted by: National Association of Science Student, Bayero University, Kano",
+    eventMonth: "March",
+    eventDate: "28",
+    eventTime: "10:00am - 12:00pm",
+    eventStatus: "Free",
+    eventLocation: "Bayero University Kano",
+    eventTags: ["tech", "Artificail Intelligence", "Networking", "AI"],
+  },
+  {
+    eventId: 5,
     eventFlyer: flyer,
     eventHeader: "1st Annual Scientist Conference",
     eventDesc:
@@ -38,39 +61,38 @@ export const eventData = [
     eventMonth: "March",
     eventDate: "28",
     eventStatus: "Free",
+    eventTime: "10:00am - 12:00pm",
     eventLocation: "Bayero University Kano",
+    eventTags: ["tech", "Artificail Intelligence", "Networking", "AI"],
   },
   {
+    eventId: 6,
     eventFlyer: flyer,
     eventHeader: "1st Annual Scientist Conference",
     eventDesc:
       "Hosted by: National Association of Science Student, Bayero University, Kano",
     eventMonth: "March",
     eventDate: "28",
-    eventStatus: "Free",
-    eventLocation: "Bayero University Kano",
-  },
-  {
-    eventFlyer: flyer,
-    eventHeader: "1st Annual Scientist Conference",
-    eventDesc:
-      "Hosted by: National Association of Science Student, Bayero University, Kano",
-    eventMonth: "March",
-    eventDate: "28",
+    eventTime: "10:00am - 12:00pm",
     eventStatus: "Free",
     eventLocation: "AKTH",
+    eventTags: ["tech", "Artificail Intelligence", "Networking", "AI"],
   },
   {
+    eventId: 7,
     eventFlyer: flyer,
     eventHeader: "1st Annual Scientist Conference",
     eventDesc:
       "Hosted by: National Association of Science Student, Bayero University, Kano",
     eventMonth: "March",
     eventDate: "28",
+    eventTime: "10:00am - 12:00pm",
     eventStatus: "Free",
     eventLocation: "Kano Poly",
+    eventTags: ["tech", "Artificail Intelligence", "Networking", "AI"],
   },
   {
+    eventId: 8,
     eventFlyer: flyer,
     eventHeader: "1st Annual Scientist Conference",
     eventDesc:
@@ -78,16 +100,21 @@ export const eventData = [
     eventMonth: "March",
     eventDate: "28",
     eventStatus: "Free",
+    eventTime: "10:00am - 12:00pm",
     eventLocation: "Bayero University Kano",
+    eventTags: ["tech", "Artificail Intelligence", "Networking", "AI"],
   },
   {
+    eventId: 9,
     eventFlyer: flyer,
     eventHeader: "1st Annual Scientist Conference",
     eventDesc:
       "Hosted by: National Association of Science Student, Bayero University, Kano",
     eventMonth: "January",
     eventDate: "01",
+    eventTime: "10:00am - 12:00pm",
     eventStatus: "Paid",
     eventLocation: "Baba Ahmed University",
+    eventTags: ["tech", "Artificail Intelligence", "Networking", "AI"],
   },
 ];

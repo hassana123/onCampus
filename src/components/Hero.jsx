@@ -25,7 +25,6 @@ const Hero = () => {
         </div>
         <img className="w-[30%]" src={image} alt="" />
       </section>
-      <SearchBar />
     </>
   );
 };

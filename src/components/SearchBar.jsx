@@ -8,7 +8,7 @@ import {
 
 import search from "../assets/search.svg";
 import arrow from "../assets/arrow.svg";
-const SearchBar = () => {
+const SearchBar = ({ bgColor, textColor }) => {
   const [showLocations, setShowLocations] = useState(false);
   const eventData = useSelector((state) => state.filter.eventData);
 
@@ -26,14 +26,11 @@ const SearchBar = () => {
   const handleSearch = () => {
     dispatch(performSearch({ searchTerm, selectedLocation }));
   };
-  // const locations = [
-  //   "Bayero University Kano",
-  //   "Baba Ahmed",
-  //   "AKTH",
-  //   "KUST Wudil",
-  // ];
+
   return (
-    <section className="items-center  py-2 px-20 mt-[-25px] rounded-[15px] text-white flex   bg-[var(--color-dark)] w-[85%] mx-auto">
+    <section
+      className={`items-center  py-4 px-20 mt-[-25px] rounded-[15px] text-${textColor} flex bg-[${bgColor}] w-[85%] mx-auto`}
+    >
       <div className="flex space-x-20 w-[90%]">
         <div className="">
           <p>Looking For</p>
