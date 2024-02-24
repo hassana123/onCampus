@@ -4,6 +4,7 @@ import Home from "./routes/Home";
 import EventPage from "./routes/EventPage";
 import Login from "./routes/Login";
 import SignUp from "./routes/SignUp";
+import CommunityPreview from "./routes/CommunityPreview";
 import UserDashboard from "./routes/UserDashboard";
 import CommunityPage from "./routes/CommunityPage";
 import NewEventPage from "./routes/NewEventPage";
@@ -12,6 +13,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="community" element={<CommunityPreview />} />
       <Route path="event-details/:id" element={<EventPage />} />
       <Route path="login" element={<Login />} />
       <Route path="sign-up" element={<SignUp />} />
