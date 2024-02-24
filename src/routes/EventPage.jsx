@@ -19,36 +19,43 @@ const EventPage = () => {
     <Layout>
       <section className="mb-[120px]">
         <section
-          className="flex w-[90%] px-10 mx-auto bg-black gap-10 text-white justify-center items-center py-5"
-          // style={{
-          //   backgroundImage: selectedEvent
-          //     ? `url(${selectedEvent.eventFlyer})`
-          //     : "",
-          // }}
+          className="flex w-[90%] px-10 mx-auto gap-10 text-white justify-center items-center py-5"
+          style={{
+            backgroundImage: `url(${selectedEvent?.eventFlyer})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            height: "400px", // Set your desired height
+          }}
         >
           <div>
             <h1 className="text-[30px] font-bold my-5">
-              {selectedEvent.eventHeader}
+              {selectedEvent?.eventHeader}
             </h1>
             <span>By This and That</span>
-            <p className="mt-10">{selectedEvent.eventDesc}</p>
-            <p className="my-5">{selectedEvent.eventLocation}</p>
+            <p className="mt-10">{selectedEvent?.eventDesc}</p>
+            <p className="my-5">{selectedEvent?.eventLocation}</p>
           </div>
-          <div className="mx-auto bg-white py-10 px-3 rounded-md text-black">
+          <div className="mx-auto bg-white py-20 px-3 rounded-md text-black">
             <h1 className="font-bold text-[20px]">Date and Time </h1>
             <p className="my-5">
-              <span className="mx-2"> {selectedEvent.eventMonth}</span>{" "}
-              <span className="mx-2">{selectedEvent.eventDate}</span>
-              <span className="mx-2">{selectedEvent.eventTime}</span>
+              <span className="mx-2"> {selectedEvent?.eventMonth}</span>{" "}
+              <span className="mx-2">{selectedEvent?.eventDate}</span>
+              <span className="mx-2">{selectedEvent?.eventTime}</span>
             </p>
-            <p className="text-center my-5"> add to calender</p>
-            <button>Book New Event</button>
+            <p className="text-center my-5 text-[var(--color-purple)] text-[20px]">
+              {" "}
+              add to calender
+            </p>
+            <button className="text-white bg-[var(--color-purple)] mx-20  py-3 px-10 rounded-md">
+              Book New Event
+            </button>
           </div>
         </section>
-        <section className="w-[90%]  mx-auto my-10 gap-10  grid grid-cols-2">
+        <section className="w-[90%]  mx-auto my-20 gap-10  grid grid-cols-2">
           <div className="">
             <h1 className="font-bold  text-[20px] mb-5">Descripiton</h1>
-            <p>{selectedEvent.eventDesc}</p>
+            <p>{selectedEvent?.eventDesc}</p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
               tenetur, magni autem atque ipsam eaque iusto? Nemo, dolorem! Quo
@@ -62,7 +69,7 @@ const EventPage = () => {
           </div>
           <div className="">
             <h1 className="font-bold  text-[20px] mb-5"> Event Location</h1>
-            <p className="font-bold my-3">{selectedEvent.eventLocation}</p>
+            <p className="font-bold my-3">{selectedEvent?.eventLocation}</p>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
               numquam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -73,12 +80,12 @@ const EventPage = () => {
             <h1 className="font-bold  text-[20px] mb-5">Hours</h1>
             <p>
               Hours:{" "}
-              <span className="font-bold"> {selectedEvent.eventTime}</span>
+              <span className="font-bold"> {selectedEvent?.eventTime}</span>
             </p>
           </div>
           <div>
             <h1 className="font-bold  text-[20px] mb-5"> Tags</h1>
-            {selectedEvent.eventTags.map((tag, index) => (
+            {selectedEvent?.eventTags.map((tag, index) => (
               <button
                 className="bg-gray-300 mr-5 px-5 py-3 rounded-lg"
                 key={index}

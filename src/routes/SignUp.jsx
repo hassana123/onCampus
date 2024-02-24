@@ -74,7 +74,7 @@ const SignUp = () => {
     <section className="text-[16px] bg-custom-image flex items-center justify-center  bg-cover w-[100%] h-screen">
       <div className="w-[70%] mx-auto max-[500px] ">
         <div className="text-center">
-          <h1 className=" text-[40px] my-1 font-bold text-[var(--color-purple)]">
+          <h1 className="font-custom1 text-[40px] my-1 font-bold text-[var(--color-purple)]">
             OnCampus
           </h1>
           <p className="my-1 font-bold text-[22px]"> Sign Up</p>

@@ -4,6 +4,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        custom: ["Roboto", "sans-serif"],
+        custom1: ["Salsa", "cursive"],
+        custom2: ["Montserrat", "sans-serif"],
+      },
       backgroundImage: {
         "custom-image": 'url("./src/assets/section.png")',
       },
