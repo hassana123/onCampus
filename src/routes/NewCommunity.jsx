@@ -1,12 +1,12 @@
 import React from "react";
 import DashNav from "../components/DashNav";
 import Footer from "../components/Footer";
-import NewCommunityForm from "../components/NewCommunityForm";
+import CommunityForm from "../components/CommunityForm";
 const NewCommunity = () => {
   return (
     <main className="h-screen">
       <DashNav />
-      <NewCommunityForm />
+      <CommunityForm />
       <Footer />
     </main>
   );

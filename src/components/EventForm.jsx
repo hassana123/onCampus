@@ -1,25 +1,38 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateField } from "../data/eventFormSlice";
 
 import upload from "../assets/upload.svg";
 
-const NewEventForm = () => {
+const EventForm = ({ onSubmit, buttonText, initialValues }) => {
   const fileInputRef = useRef(null);
   const dispatch = useDispatch();
   const formState = useSelector((state) => state.eventForm);
   console.log(formState);
+
+  useEffect(() => {
+    if (initialValues) {
+      Object.entries(initialValues).forEach(([field, value]) => {
+        dispatch(updateField({ field, value }));
+      });
+
+      if (initialValues.profilePicture) {
+        setImagePreview(URL.createObjectURL(initialValues.profilePicture));
+      }
+    }
+  }, [initialValues, dispatch]);
+  const [imagePreview, setImagePreview] = useState(null);
+
   const handleInputChange = (field, value) => {
     dispatch(updateField({ field, value }));
   };
-  const [imagePreview, setImagePreview] = useState(null);
+
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     dispatch(updateField({ field: "profilePicture", value: file }));
     if (file) {
       const reader = new FileReader();
       reader.onload = (event) => {
-        // Update the image source or use it as needed
         setImagePreview(event.target.result);
       };
       reader.readAsDataURL(file);
@@ -27,13 +40,14 @@ const NewEventForm = () => {
   };
 
   const handleUploadClick = () => {
-    // Trigger click on the hidden file input
     fileInputRef.current.click();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onSubmit(formState);
   };
+
   return (
     <form
       className="w-[70%] mx-20 my-10 text-black"
@@ -185,10 +199,10 @@ const NewEventForm = () => {
         className="bg-[#C1D7F9]  block mx-auto text-[var(--color-dark)] font-semibold px-8 py-3 rounded-lg"
         type="submit"
       >
-        Create
+        {buttonText}
       </button>
     </form>
   );
 };
 
-export default NewEventForm;
+export default EventForm;

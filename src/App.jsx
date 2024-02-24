@@ -8,6 +8,7 @@ import CommunityPreview from "./routes/CommunityPreview";
 import UserDashboard from "./routes/UserDashboard";
 import CommunityPage from "./routes/CommunityPage";
 import NewEventPage from "./routes/NewEventPage";
+import UpdateEvent from "./routes/UpdateEvent";
 import NewCommunity from "./routes/NewCommunity";
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="user" element={<UserDashboard />} />
       <Route path="community-page" element={<CommunityPage />} />
       <Route path="new-event" element={<NewEventPage />} />
+      <Route path="update-event" element={<UpdateEvent />} />
       <Route path="new-community" element={<NewCommunity />} />
     </Routes>
   );

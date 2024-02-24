@@ -74,9 +74,22 @@ const EventsCreated = () => {
               >
                 Delete
               </button>
-              <button className="bg-[#8EB7F6] px-5 py-2 mx-5 rounded-md">
+              <NavLink
+                to={{
+                  pathname: "/update-event",
+                  state: {
+                    eventId: event.eventId,
+                    initialData: {
+                      eventHeader: event.eventHeader,
+                      eventLocation: event.eventLocation,
+                      eventTime: event.eventTime,
+                    },
+                  },
+                }}
+                className="bg-[#8EB7F6] px-5 py-2 mx-5 rounded-md"
+              >
                 Update
-              </button>
+              </NavLink>
             </div>
           </section>
         ))}

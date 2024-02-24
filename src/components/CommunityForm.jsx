@@ -6,7 +6,7 @@ import { topicTags } from "../data/Topics";
 import { useDispatch, useSelector } from "react-redux";
 import { updateField, updateSelectedTopics } from "../data/communityFormSlice";
 
-const NewCommunityForm = () => {
+const CommunityForm = () => {
   const fileInputRef = useRef(null);
   const dispatch = useDispatch();
   const formState = useSelector((state) => state.communityForm);
@@ -242,4 +242,4 @@ const NewCommunityForm = () => {
   );
 };
 
-export default NewCommunityForm;
+export default CommunityForm;
