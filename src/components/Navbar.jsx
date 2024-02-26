@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import SearchBar from "./SearchBar";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -95,7 +94,6 @@ const Navbar = () => {
         >
           Sign Up
         </NavLink>
-        {isMenuOpen ? <SearchBar /> : ""}
       </div>
     </nav>
   );

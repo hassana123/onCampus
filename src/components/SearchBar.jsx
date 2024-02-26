@@ -29,9 +29,9 @@ const SearchBar = ({ bgColor, textColor }) => {
 
   return (
     <section
-      className={`items-center  py-4 px-20 mt-[-25px] rounded-[15px] hidden md:flex text-${textColor} bg-[${bgColor}] w-[85%] mx-auto`}
+      className={`items-center px-2  md:gap-0 justify-between  py-4 md:px-10 mt-[-25px] rounded-[15px]  flex text-${textColor} bg-[${bgColor}] md:w-[85%] w-[95%] mx-auto`}
     >
-      <div className="flex space-x-20 w-[90%]">
+      <div className="md:flex md:space-x-20 md:w-[90%]">
         <div className="">
           <p>Looking For</p>
           <input
