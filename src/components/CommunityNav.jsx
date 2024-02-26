@@ -31,7 +31,9 @@ const CommunityNav = () => {
             <h1 className="my-3">
               Followers <span className="font-normal">500</span>
             </h1>
-            <h1 className=" "> Update Community Profile</h1>
+            <NavLink to="/update-community" className=" ">
+              Update Community Profile
+            </NavLink>
           </div>
         </div>
       ) : (

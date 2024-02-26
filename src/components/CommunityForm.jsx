@@ -6,7 +6,7 @@ import { topicTags } from "../data/Topics";
 import { useDispatch, useSelector } from "react-redux";
 import { updateField, updateSelectedTopics } from "../data/communityFormSlice";
 
-const CommunityForm = () => {
+const CommunityForm = ({ onSubmit, buttonTexts }) => {
   const fileInputRef = useRef(null);
   const dispatch = useDispatch();
   const formState = useSelector((state) => state.communityForm);
@@ -32,6 +32,8 @@ const CommunityForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    // onSubmit function will be passed from the parent component
+    onSubmit(formState);
   };
   const [imagePreview, setImagePreview] = useState(null);
   const handleFileInputChange = (e) => {
@@ -236,7 +238,7 @@ const CommunityForm = () => {
         className="bg-[#C1D7F9]  block mx-auto text-[var(--color-dark)] font-semibold px-8 py-3 rounded-lg"
         type="submit"
       >
-        Create
+        {buttonTexts}
       </button>
     </form>
   );

@@ -10,6 +10,7 @@ import CommunityPage from "./routes/CommunityPage";
 import NewEventPage from "./routes/NewEventPage";
 import UpdateEvent from "./routes/UpdateEvent";
 import NewCommunity from "./routes/NewCommunity";
+import UpdateCommunity from "./routes/UpdateCommunity";
 function App() {
   return (
     <Routes>
@@ -21,7 +22,8 @@ function App() {
       <Route path="user" element={<UserDashboard />} />
       <Route path="community-page" element={<CommunityPage />} />
       <Route path="new-event" element={<NewEventPage />} />
-      <Route path="update-event" element={<UpdateEvent />} />
+      <Route path="update-event/:eventId" element={<UpdateEvent />} />
+      <Route path="update-community" element={<UpdateCommunity />} />
       <Route path="new-community" element={<NewCommunity />} />
     </Routes>
   );

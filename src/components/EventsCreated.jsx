@@ -76,14 +76,10 @@ const EventsCreated = () => {
               </button>
               <NavLink
                 to={{
-                  pathname: "/update-event",
+                  pathname: `/update-event/${event.eventId}`, // Assuming event.id is the unique identifier
                   state: {
                     eventId: event.eventId,
-                    initialData: {
-                      eventHeader: event.eventHeader,
-                      eventLocation: event.eventLocation,
-                      eventTime: event.eventTime,
-                    },
+                    initialData: event,
                   },
                 }}
                 className="bg-[#8EB7F6] px-5 py-2 mx-5 rounded-md"
