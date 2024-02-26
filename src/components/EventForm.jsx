@@ -50,12 +50,12 @@ const EventForm = ({ onSubmit, buttonText, initialValues }) => {
 
   return (
     <form
-      className="w-[70%] mx-20 my-10 text-black"
+      className="md:w-[80%] w-[95%] md:mx-10 mx-1 my-10 text-black"
       onSubmit={handleSubmit}
       action=""
     >
       <div className="my-10">
-        <p className="font-bold text-[30px] my-5 text-[#212121]">
+        <p className="font-bold md:text-[30px] text-[18px] my-5 text-[#212121]">
           Upload Your Event Picture
         </p>
         <div className="flex items-center gap-3">
@@ -88,7 +88,7 @@ const EventForm = ({ onSubmit, buttonText, initialValues }) => {
         )}
       </div>
       <div>
-        <p className="font-bold text-[30px] my-5 text-[#212121]">
+        <p className="font-bold md:text-[30px] text-[18px] my-5 text-[#212121]">
           Choose a name for your event
         </p>
         <span className="block">
@@ -97,15 +97,15 @@ const EventForm = ({ onSubmit, buttonText, initialValues }) => {
         </span>
         <textarea
           onChange={(e) => handleInputChange("eventName", e.target.value)}
-          className="bg-transparent border-[#D9D9D9] border-[0.5px] my-2"
+          className="bg-transparent border-[#D9D9D9] w-[90%] border-[0.5px] my-2"
           name=""
           id=""
-          cols="60"
+          cols=""
           rows="3"
         ></textarea>
       </div>
       <div>
-        <p className="font-bold text-[30px]  my-5 text-[#212121]">
+        <p className="font-bold text-[18px]  md:text-[30px]  my-5 text-[#212121]">
           Describe Your Event
         </p>
         <span className="block">
@@ -113,10 +113,10 @@ const EventForm = ({ onSubmit, buttonText, initialValues }) => {
           update it later too
         </span>
         <textarea
-          className="bg-transparent border-[#D9D9D9] border-[0.5px] my-2"
+          className="bg-transparent border-[#D9D9D9] w-[90%] border-[0.5px] my-2"
           name=""
           id=""
-          cols="60"
+          cols=""
           rows="5"
           onChange={(e) =>
             handleInputChange("eventDescription", e.target.value)
@@ -124,7 +124,7 @@ const EventForm = ({ onSubmit, buttonText, initialValues }) => {
         ></textarea>
       </div>
       <div>
-        <p className="font-bold text-[30px] my-5 text-[#212121]">
+        <p className="font-bold md:text-[30px] text-[18px]  my-5 text-[#212121]">
           choose a venue for your Event
         </p>
         <span className="block">
@@ -132,25 +132,25 @@ const EventForm = ({ onSubmit, buttonText, initialValues }) => {
           is going to hold.
         </span>
         <textarea
-          className="bg-transparent border-[#D9D9D9] border-[0.5px] my-2"
+          className="bg-transparent w-[90%] border-[#D9D9D9] border-[0.5px] my-2"
           name=""
           id=""
-          cols="60"
+          cols=""
           rows="3"
           onChange={(e) => handleInputChange("eventVenue", e.target.value)}
         ></textarea>
       </div>
       <div>
-        <p className="font-bold text-[30px] my-5 text-[#212121]">
+        <p className="font-bold text-[18px] md:text-[30px] my-5 text-[#212121]">
           Choose a date and time for your Event
         </p>
         <span className="block">
           Choose a date and time that will give people a clear idea of when the
           event is going to hold.
         </span>
-        <div className="flex gap-10 my-5">
+        <div className="md:flex md:gap-10 my-5">
           <div>
-            <label className="cursor-pointer mx-5 my-1 block ">
+            <label className="font-bold mx-5 my-1 block ">
               <span>Select Date</span>
             </label>
             <input
@@ -163,7 +163,7 @@ const EventForm = ({ onSubmit, buttonText, initialValues }) => {
           </div>
 
           <div>
-            <label htmlFor="startTime" className="block   mx-5 my-1">
+            <label htmlFor="startTime" className="block font-bold   mx-5 my-1">
               <span>Select Start Time</span>
             </label>
 
@@ -178,7 +178,7 @@ const EventForm = ({ onSubmit, buttonText, initialValues }) => {
             />
           </div>
           <div>
-            <label htmlFor="endTime" className="block   mx-5 my-1">
+            <label htmlFor="endTime" className="block font-bold   mx-5 my-1">
               <span>Select End Time</span>
             </label>
 

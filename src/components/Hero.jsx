@@ -3,9 +3,10 @@ import image from "../assets/header.png";
 const Hero = () => {
   return (
     <>
-      <section className="w-[90%] space-x-10 items-center rounded-md justify-center flex mx-auto py-20 bg-custom-image">
-        <div className="w-[40%]">
-          <h1 className="text-[36px] my-5 font-700">
+      <section className="md:w-[90%] w-[95%] space-x-10 items-center rounded-md justify-center md:flex mx-auto py-20 bg-custom-image">
+        <img className="md:hidden w-[70%] mx-auto" src={image} alt="" />
+        <div className="md:w-[40%]">
+          <h1 className="md:text-[36px] text-[18px] my-5 font-700">
             OnCampus— Connecting Campuses. Turning interests to
             <span className="text-[var(--color-purple)]"> friendships</span>.
           </h1>
@@ -21,7 +22,7 @@ const Hero = () => {
             Start a Community
           </NavLink>
         </div>
-        <img className="w-[30%]" src={image} alt="" />
+        <img className="w-[30%] hidden md:block" src={image} alt="" />
       </section>
     </>
   );

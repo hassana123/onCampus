@@ -53,13 +53,13 @@ const CommunityForm = ({ onSubmit, buttonTexts }) => {
   };
   return (
     <form
-      className="w-[90%] mx-20 my-10 text-black"
+      className="md:w-[90%] md:mx-5 w-[95%] mx-auto my-10 text-black"
       onSubmit={handleSubmit}
       action=""
     >
-      <div className="flex items-center my-10">
-        <div className="w-[70%]">
-          <p className="font-bold text-[30px] my-5 text-[#212121]">
+      <div className="md:flex items-center text-[18px] my-10">
+        <div className="md:w-[70%]">
+          <p className="font-bold md:text-[30px] my-5 text-[#212121]">
             Upload your Community Profile Picture
           </p>
           <div className=" cursor-pointer flex items-center gap-3">
@@ -91,16 +91,16 @@ const CommunityForm = ({ onSubmit, buttonTexts }) => {
             )}
           </div>
         </div>
-        <div className="w-[30%]">
+        <div className="md:w-[30%] my-5 md:my-0 text-[12px] ">
           <p className="flex gap-2 my-2">
             <img src={tip} alt="" /> <span>Tip</span>
           </p>
           <p>You can edit this later if you change your mind.</p>
         </div>
       </div>
-      <div className="flex items-center my-10">
-        <div className="  w-[70%]">
-          <p className="font-bold text-[30px] my-5 text-[#212121]">
+      <div className="md:flex items-center my-10">
+        <div className="  md:w-[70%]">
+          <p className="font-bold md:text-[30px] my-5 text-[#212121]">
             Choose a name for your Community
           </p>
           <span className="block">
@@ -109,35 +109,35 @@ const CommunityForm = ({ onSubmit, buttonTexts }) => {
           </span>
           <textarea
             onChange={(e) => handleInputChange("communityName", e.target.value)}
-            className="bg-transparent border-[#D9D9D9] border-[0.5px] my-2"
+            className=" w-[90%] bg-transparent border-[#D9D9D9] border-[0.5px] my-2"
             name=""
             id=""
-            cols="64"
+            cols=""
             rows="3"
           ></textarea>
         </div>
-        <div className="w-[30%]">
+        <div className="md:w-[30%] my-5 md:my-0 text-[12px] ">
           <p className="flex gap-2 my-2">
             <img src={tip} alt="" /> <span>Tip</span>
           </p>
           <p>You can edit this later if you change your mind.</p>
         </div>
       </div>
-      <div className="flex items-center my-10">
-        <div className="w-[70%]">
-          <p className="font-bold text-[30px] my-5 text-[#212121]">
+      <div className="md:flex items-center my-10">
+        <div className="md:w-[70%]">
+          <p className="font-bold md:text-[30px] my-5 text-[#212121]">
             choose Your Campus for your Community
           </p>
 
           <input
             onChange={(e) => handleInputChange("campus", e.target.value)}
-            className="bg-white py-3 px-2 w-[70%]  border-[#D9D9D9] border-[0.8px]"
+            className="bg-white py-3 px-2 w-[90%]  border-[#D9D9D9] border-[0.8px]"
             name=""
             id=""
             placeholder="Bayero Univeristy Kano"
           />
         </div>
-        <div className="w-[30%]">
+        <div className="text-[12px] md:w-[30%] my-5 md:my-0">
           <p className="flex gap-2">
             <img src={tip} alt="" /> <span>Tip</span>
           </p>
@@ -147,8 +147,8 @@ const CommunityForm = ({ onSubmit, buttonTexts }) => {
           </p>
         </div>
       </div>
-      <div className="flex items-center my-10">
-        <div className="w-[70%]">
+      <div className="md:flex items-center my-10">
+        <div className="md:w-[70%]">
           <p className="font-bold text-[30px]  my-5 text-[#212121]">
             Describe Your Community
           </p>
@@ -160,14 +160,14 @@ const CommunityForm = ({ onSubmit, buttonTexts }) => {
             onChange={(e) =>
               handleInputChange("communityDescription", e.target.value)
             }
-            className="bg-transparent border-[#D9D9D9] border-[0.5px] my-2"
+            className="w-[90%] bg-transparent border-[#D9D9D9] border-[0.5px] my-2"
             name=""
             id=""
-            cols="64"
+            cols=""
             rows="8"
           ></textarea>
         </div>
-        <div className="w-[30%]">
+        <div className="md:w-[30%] my-5 md:my-0 text-[12px] ">
           <div className="mb-3">
             <p className="flex gap-2">
               <img src={tip} alt="" /> <span>Tip</span>
@@ -182,7 +182,7 @@ const CommunityForm = ({ onSubmit, buttonTexts }) => {
             </div>
           </div>
           <div>
-            <p className="flex gap-2">
+            <p className="flex items-center gap-2">
               <img src={idea} alt="" /> <span>Example</span>
             </p>
             <p>
@@ -196,18 +196,18 @@ const CommunityForm = ({ onSubmit, buttonTexts }) => {
         </div>
       </div>
 
-      <div className="flex items-center my-10">
-        <div className="w-[70%]">
-          <p className="font-bold text-[30px] my-5 text-[#212121]">
+      <div className="md:flex items-center my-10">
+        <div className="md:w-[70%]">
+          <p className="font-bold md:text-[30px] my-5 text-[#212121]">
             Choose Topics for your community
           </p>
 
           <input
             type="text"
-            className="block my-5 bg-white py-3 px-2 w-[70%]  border-[#D9D9D9] border-[0.8px]"
+            className="block my-5 bg-white py-3 px-2 w-[90%]  border-[#D9D9D9] border-[0.8px]"
             placeholder="search for topics"
           />
-          <div className="w-[70%]">
+          <div className="w-[90%]">
             {topicTags.map((tag, index) => (
               <button
                 onClick={() => handleTagClick(tag)}
@@ -223,7 +223,7 @@ const CommunityForm = ({ onSubmit, buttonTexts }) => {
             ))}
           </div>
         </div>
-        <div className="w-[30%]">
+        <div className="md:w-[30%] my-5 md:my-0 text-[12px] ">
           <p className="flex gap-2">
             <img src={tip} alt="" /> <span>Tip</span>
           </p>

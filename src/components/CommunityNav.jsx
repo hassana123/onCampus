@@ -10,13 +10,15 @@ const CommunityNav = () => {
   };
   return (
     <>
-      <nav className="text-black py-2 mx-auto grid grid-cols-2 mb-20  w-[85%]">
-        <h1 className="font-custom1 text-[45px] text-[var(--color-purple)]">
+      <nav className="text-black py-2 mx-auto grid grid-cols-2 items-center mb-20  w-[85%]">
+        <h1 className="font-custom1 md:text-[45px] text-[20px] text-[var(--color-purple)]">
           OnCampus
         </h1>
 
         <div className=" mr-5 mx-auto flex gap-10 items-center">
-          <p className="text-center">Bayero University Business Club</p>
+          <p className="text-center hidden md:block">
+            Bayero University Business Club
+          </p>
           <img
             className="rounded-[50%] cursor-pointer h-[52px] w-[50px]"
             src={community}

@@ -17,9 +17,9 @@ const EventPage = () => {
   console.log(selectedEvent);
   return (
     <Layout>
-      <section className="mb-[120px]">
+      <section className="md:mb-[100px]">
         <section
-          className="flex w-[90%] px-10 mx-auto gap-10 text-white justify-center items-center py-5"
+          className="md:flex w-[90%] px-10 mx-auto md:gap-10 text-white justify-center items-center py-5"
           style={{
             backgroundImage: `url(${selectedEvent?.eventFlyer})`,
             backgroundSize: "cover",
@@ -29,14 +29,14 @@ const EventPage = () => {
           }}
         >
           <div>
-            <h1 className="text-[30px] font-bold my-5">
+            <h1 className="md:text-[30px] text-[18px] font-bold my-5">
               {selectedEvent?.eventHeader}
             </h1>
             <span>By This and That</span>
             <p className="mt-10">{selectedEvent?.eventDesc}</p>
             <p className="my-5">{selectedEvent?.eventLocation}</p>
           </div>
-          <div className="mx-auto bg-white py-20 px-3 rounded-md text-black">
+          <div className="mx-auto hidden md:block bg-white md:py-20 px-3 rounded-md text-black">
             <h1 className="font-bold text-[20px]">Date and Time </h1>
             <p className="my-5">
               <span className="mx-2"> {selectedEvent?.eventMonth}</span>{" "}
@@ -52,7 +52,22 @@ const EventPage = () => {
             </button>
           </div>
         </section>
-        <section className="w-[90%]  mx-auto my-20 gap-10  grid grid-cols-2">
+        <div className="mx-auto md:hiddden my-10 bg-white py-10 w-[90%] px-3 rounded-md text-black">
+          <h1 className="font-bold text-[20px]">Date and Time </h1>
+          <p className="my-5">
+            <span className="mx-2"> {selectedEvent?.eventMonth}</span>{" "}
+            <span className="mx-2">{selectedEvent?.eventDate}</span>
+            <span className="mx-2">{selectedEvent?.eventTime}</span>
+          </p>
+          <p className="text-center my-5 text-[var(--color-purple)] text-[20px]">
+            {" "}
+            add to calender
+          </p>
+          <button className="text-white bg-[var(--color-purple)] mx-10  py-3 px-10 rounded-md">
+            Book New Event
+          </button>
+        </div>
+        <section className="w-[90%]  mx-auto my-20 gap-10  md:grid grid-cols-2">
           <div className="">
             <h1 className="font-bold  text-[20px] mb-5">Descripiton</h1>
             <p>{selectedEvent?.eventDesc}</p>
@@ -67,7 +82,7 @@ const EventPage = () => {
               quisquam, tempora suscipit ex ullam! Exercitationem.
             </p>
           </div>
-          <div className="">
+          <div className="md:my-0 my-5">
             <h1 className="font-bold  text-[20px] mb-5"> Event Location</h1>
             <p className="font-bold my-3">{selectedEvent?.eventLocation}</p>
             <p>
@@ -84,10 +99,10 @@ const EventPage = () => {
             </p>
           </div>
           <div>
-            <h1 className="font-bold  text-[20px] mb-5"> Tags</h1>
+            <h1 className="font-bold  text-[20px] mb-5 my-5 md:my-0"> Tags</h1>
             {selectedEvent?.eventTags.map((tag, index) => (
               <button
-                className="bg-gray-300 mr-5 px-5 py-3 rounded-lg"
+                className="bg-gray-300 mr-5 px-5 py-3 my-1 rounded-lg"
                 key={index}
               >
                 {tag}
@@ -95,7 +110,7 @@ const EventPage = () => {
             ))}
           </div>
           <div>
-            <h1 className="font-bold  text-[20px] my-b">
+            <h1 className="font-bold  text-[20px] my-3">
               How can i contact the organizer
             </h1>
             <p>

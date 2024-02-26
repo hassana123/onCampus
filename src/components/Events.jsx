@@ -15,18 +15,18 @@ const Events = ({ pageTitle }) => {
   console.log(searchResults);
   return (
     <section className="w-[85%] mx-auto">
-      <div className="flex my-10">
-        <h1 className="w-[70%] font-bold text-[25px]">{pageTitle}</h1>
-        <div className=" flex space-x-10">
-          <p className="bg-[#C1D7F9] px-5 py-3 flex gap-1 rounded-md">
-            Event Type <img src={bluearrow} alt="" />
-          </p>
-          <p className="bg-[#C1D7F9] px-5 py-3 flex gap-1 ">
-            Campus <img src={bluearrow} alt="" />
-          </p>
+      <div className="md:flex my-10">
+        <h1 className="w-[70%] font-bold md:text-[25px]">{pageTitle}</h1>
+        <div className=" md:flex  md:space-x-10">
+          <button className="bg-[#C1D7F9]  block px-3  rounded-md">
+            Event Type <img className="inline-block " src={bluearrow} alt="" />
+          </button>
+          <button className="bg-[#C1D7F9] my-5 md:my-0 px-3 block rounded-md">
+            Campus <img className="inline-block " src={bluearrow} alt="" />
+          </button>
         </div>
       </div>
-      <div className="grid grid-cols-3 my-10 gap-5  rounded-md">
+      <div className="md:grid grid-cols-3 my-10 gap-5  rounded-md">
         {(searchResults.length > 0 || searchTerm !== ""
           ? searchResults
           : eventData
@@ -42,7 +42,7 @@ const Events = ({ pageTitle }) => {
                 src={event.eventFlyer}
                 alt="Event Flyer"
               />
-              <div className="flex my-10 mx-5 gap-5">
+              <div className="md:flex my-10 mx-5 gap-5">
                 <div className="text-[19px] text-center ">
                   <p className="text-[#189AE6]  my-5">{event.eventMonth}</p>
                   <p className="">{event.eventDate}</p>

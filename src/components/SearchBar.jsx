@@ -29,7 +29,7 @@ const SearchBar = ({ bgColor, textColor }) => {
 
   return (
     <section
-      className={`items-center  py-4 px-20 mt-[-25px] rounded-[15px] text-${textColor} flex bg-[${bgColor}] w-[85%] mx-auto`}
+      className={`items-center  py-4 px-20 mt-[-25px] rounded-[15px] hidden md:flex text-${textColor} bg-[${bgColor}] w-[85%] mx-auto`}
     >
       <div className="flex space-x-20 w-[90%]">
         <div className="">

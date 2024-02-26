@@ -11,11 +11,11 @@ const CommunityEvents = () => {
       <div>
         {topThree.map((event, index) => (
           <div
-            className="grid text-[13px] grid-cols-5 mb-10 mt-5  items-center "
+            className="md:grid text-[13px] md:grid-cols-5 mb-10 mt-5  md:items-center "
             key={index}
           >
             <img className="" src={event.eventFlyer} alt="" />
-            <div className=" w-[120%] ml-10 ">
+            <div className=" md:w-[120%] md:ml-10  ">
               <h1 className="text-[17px] font-bold my-5">
                 {event.eventHeader}
               </h1>

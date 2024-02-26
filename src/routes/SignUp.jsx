@@ -71,8 +71,8 @@ const SignUp = () => {
     dispatch(resetForm());
   };
   return (
-    <section className="text-[16px] bg-custom-image flex items-center justify-center  bg-cover w-[100%] h-screen">
-      <div className="w-[70%] mx-auto max-[500px] ">
+    <section className="text-[16px] bg-custom-image flex  items-center md:justify-center  bg-cover w-[100%] h-screen">
+      <div className="md:w-[70%] mx-auto md:max-[500px] ">
         <div className="text-center">
           <h1 className="font-custom1 text-[40px] my-1 font-bold text-[var(--color-purple)]">
             OnCampus
@@ -87,10 +87,10 @@ const SignUp = () => {
         </div>
         <form
           onSubmit={handleSignUpFormSubmit}
-          className="my-10 w-[85%] mx-auto"
+          className="my-10 md:w-[85%] w-[95%] mx-auto"
           action=""
         >
-          <div className="grid grid-cols-2 gap-10">
+          <div className="md:grid md:grid-cols-2 md:gap-10">
             <div>
               <label className="block my-2 font-bold" htmlFor="">
                 Display Name

@@ -12,22 +12,22 @@ const DashNav = () => {
   };
   return (
     <>
-      <nav className="text-black py-2 mx-auto grid grid-cols-2 mb-20  w-[85%]">
-        <h1 className="font-custom1 text-[45px] text-[var(--color-purple)]">
+      <nav className="text-black py-2 mx-auto md:grid md:grid-cols-2 mb-20 justify-between flex items-center  w-[85%]">
+        <h1 className="font-custom1 text-[20px] md:text-[45px] text-[var(--color-purple)]">
           OnCampus
         </h1>
 
-        <div className=" mr-5 mx-auto flex gap-10 items-center">
+        <div className=" mr-5 mx-auto flex gap-5 md:gap-10">
           <p className="text-center">
             <img
-              className="cursor-pointer mx-auto mt-5 mb-1"
+              className="cursor-pointer mx-auto mt-[15px] md:mt-0 w-[70%] mt-5 mb-1"
               src={bell}
               alt=""
             />
-            Notification
+            <span className="hidden md:block">Notification</span>
           </p>
           <img
-            className="rounded-[50%] cursor-pointer h-[52px] w-[50px]"
+            className="rounded-[50%] cursor-pointer md:w-[65px] md:h-[65px] md:mt-[15px] h-[52px] w-[50px]"
             src={user}
             onClick={toggleProfile}
             alt=""

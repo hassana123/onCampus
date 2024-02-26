@@ -56,7 +56,7 @@ const Login = () => {
 
   return (
     <section className="text-[16px] bg-custom-image flex items-center justify-center  bg-cover w-[100%] h-screen">
-      <div className="w-[50%] mx-auto max-[500px] ">
+      <div className="md:w-[50%] mx-auto max-[500px] ">
         <div className="text-center">
           <h1 className=" font-custom1 text-[40px] my-1 font-bold text-[var(--color-purple)]">
             OnCampus
@@ -69,7 +69,10 @@ const Login = () => {
             </NavLink>
           </span>
         </div>
-        <form onSubmit={handleLoginFormSubmit} className="w-[65%] mx-auto">
+        <form
+          onSubmit={handleLoginFormSubmit}
+          className="md:w-[65%] w-[95%] mx-auto"
+        >
           <label className="block my-3 font-bold" htmlFor="">
             Username
           </label>
